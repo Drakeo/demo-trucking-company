@@ -1,3 +1,2 @@
 activate TRK-789 1m-12-19
 demo-trucking-company 126 west YTTS way Rantoul IL 61866 217-555-1234 TRK-789 1m-12-19
-deactivate TRK-789 04-15-19
