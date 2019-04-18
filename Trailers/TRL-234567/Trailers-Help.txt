@@ -2,4 +2,3 @@ activate TRL-234567 04-16-19
 Shippers or drivers droping or hooking place bol info here .jpg .pdf
 please use your company code hy-Hyster mc-MC Mlaine sy-Sygma fa-Fapco
 demo-trucking-company 126 west YTTS way Rantoul IL 61866 217-555-1234 TRL-234567
-deactivate TRL-234567 04-16-19
