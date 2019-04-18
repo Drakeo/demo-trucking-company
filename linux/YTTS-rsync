@@ -1,0 +1,66 @@
+#!/bin/bash
+ME=$(id -u)
+#Github name = company name
+CPYNAME="demo-trucking"
+if [ "$ME" = "0" ]; then
+echo do not run this as root 
+exit 
+fi
+read -p '!! Do you need to update Dropbox from Android   Y/N : ' decides
+if [ "$decides" = "n" ]; then
+   echo Ok $ACCT
+fi 
+  
+if [ "$decides" = "N" ]; then
+   echo Ok $ACCT
+fi
+if [ "$decides" = "y" ]; then
+	cd $HOME/$CPYNAME 
+	git checkout master 
+	git pull
+   rsync -r -a -v  --delete --progress --stats --exclude .git --exclude .gitignore  \
+   $HOME/demo-trucking $HOME/Dropbox/
+      read -p 'push enter create any new links or share in Dropbox: ' hope
+    firefox https://www.dropbox.com/home/$CPYNAME
+    exit 
+fi 
+  
+if [ "$decides" = "Y" ]; then
+	cd $HOME/$CPYNAME 
+	git checkout master 
+	git pull
+   rsync -r -a -v  --delete --progress --stats --exclude .git --exclude .gitignore  \
+   $HOME/demo-trucking $HOME/Dropbox/
+   read -p 'push enter create any new links or share in Dropbox: ' hope
+   firefox https://www.dropbox.com/home/$CPYNAME 
+   exit 
+fi
+
+if [ -d $HOME/$CPYNAME ]; then
+cd $HOME/$CPYNAME 
+  git checkout master 
+  git pull
+cd $HOME
+else
+cd $HOME
+  git clone http://kkkk/kkkk.git
+fi
+echo make backup of dropbox
+sleep 3
+rsync -r -a -v  --progress --stats --exclude .git $HOME/Dropbox/ Dropbox-bkp/
+rsync -r -a -v  --delete --progress --stats --exclude .git --exclude .gitignore  \
+ $HOME/Dropbox/demo-trucking/  $HOME/demo-trucking
+
+echo ok going to comit changes
+
+cat > gitadd <<EOF
+cd $HOME/demo-trucking
+git add -A
+git commit -a -m 'upload`date +%s`'
+git push
+EOF
+sh gitadd
+rm gitadd
+echo check your http://kkkk/kkkk.git
+echo  all updated
+sleep 5
