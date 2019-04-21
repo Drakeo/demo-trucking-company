@@ -1,0 +1,5 @@
+activate TRL-53555 04-20-19
+Shippers or drivers droping or hooking place bol info here .jpg .pdf
+please use your company code hy-Hyster mc-MC Mlaine sy-Sygma fa-Fapco
+demo-trucking-company 126 west YTTS way Rantoul IL 6186 217-555-1234 TRL-53555
+deactivate TRL-53555 04-20-19
